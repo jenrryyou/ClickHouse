@@ -1,0 +1,17 @@
+<clickhouse>
+    <zookeeper>
+        <node index="1">
+            <host>localhost</host>
+            <port>9181</port>
+        </node>
+    </zookeeper>
+    <!-- Settings for fault injection.
+         Approximate probability of request success:
+             (1 - send_fault_probability) * (1 - recv_fault_probability) = 0.9999 * 0.9999 = 0.9998
+         Actually it will be less, because if some request fails due to fault injection,
+         then all requests which are in the queue now also fail.
+         In other words, session will expire approximately 2 times per 10000 requests.
+     -->
+    <send_fault_probability>0.0001</send_fault_probability>
+    <recv_fault_probability>0.0001</recv_fault_probability>
+</clickhouse>
