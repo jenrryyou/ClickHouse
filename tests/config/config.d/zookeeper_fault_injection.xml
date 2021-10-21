@@ -12,6 +12,6 @@
          then all requests which are in the queue now also fail.
          In other words, session will expire approximately 2 times per 10000 requests.
      -->
-    <send_fault_probability>0.0001</send_fault_probability>
-    <recv_fault_probability>0.0001</recv_fault_probability>
+    <send_fault_probability>0.01</send_fault_probability>
+    <recv_fault_probability>0.01</recv_fault_probability>
 </clickhouse>
